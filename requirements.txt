@@ -3,4 +3,6 @@ numpy
 seaborn
 matplotlib
 scikit-learn==0.18
+numpy
+dill
 -e .
