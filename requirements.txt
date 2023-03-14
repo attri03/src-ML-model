@@ -2,7 +2,8 @@ pandas
 numpy
 seaborn
 matplotlib
-scikit-learn==0.18
-numpy
+scikit-learn
+catboost
+xgboost
 dill
--e .
+#-e .
