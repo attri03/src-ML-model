@@ -1,7 +1,10 @@
 from src.exception import CustomException
 import os, sys
 import dill
+import numpy as np 
+import pandas as pd
 from sklearn.metrics import r2_score
+import pickle
 
 def save_object(file_path, obj):
     try:
@@ -32,5 +35,14 @@ def evaluate_model(X_train, X_test, y_train, y_test, models):
         
         return report
     
+    except Exception as e:
+        raise CustomException(e, sys)
+    
+def load_object(file_path):
+    try:
+        file = open(file_path,'rb')
+        object_file = pickle.load(file)
+        return object_file
+
     except Exception as e:
         raise CustomException(e, sys)
